@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">-->
+</head>
+
+<body>
+
+  <form id="myForm" name="myForm" action="#" method="POST">
+    <fieldset>
+      <label for="messageText">Message: </label><br />
+      <textarea rows="5" cols="20" name="messageText" id="messageText">
+      </textarea>
+      <br />
+      <p>Characters Remaining: <span id="charRemain">100</span></p>
+      <br />
+      <hr>
+      <input type="submit" name="submitForm">
+    </fieldset>
+  </form>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+
+      var charTotal = 100;
+      $(':input[name="messageText"]').on("keyup",function() {
+      var curLength = $(':input[name="messageText"]').val().length;
+      var charRemaining = charTotal - curLength;
+      $('#charRemain').text(charRemaining);
+      });
+
+    });
+
+
+  </script>
+</body>
+
+</html>

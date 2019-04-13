@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">-->
+
+  <style type="text/css">
+    #mover, #movedest { border: 1px solid black; padding: 3px; }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="mover">
+    Div 1: <p class="moveit">Some Text That Moves</p>
+  </div>
+  <div id="movedest">
+    Div 2:
+  </div>
+
+  <br>
+  <p> Wonderful <a id="mylink1" href="https://google.com">link</a></p>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <script>
+
+    $(document).ready(function(){
+      $('#mover').hover(function(){
+        $('.moveit').appendTo('#movedest');
+      });
+      $('#mylink1').click(function(e){
+        alert($('#mylink1').text() + " is currently unreachable");
+        //return false; //prevent default action by returning default
+        e.preventDefault();
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>
